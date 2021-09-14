@@ -46,9 +46,13 @@ const assertArraysEqual = function(array1, array2) {
 
 
 const without = function(source, toRemove) {
+  //create copy of source array
   let newArray = source;
+  //loop through values to remove
   for (let i = 0; i < toRemove.length; i++) {
+    //check if values are in source array
     while (newArray.includes(toRemove[i]) === true) {
+      //remove values from source array
       for (let j = 0; j < newArray.length; j++) {
         if (newArray[j] ===  toRemove[i]) {
           newArray.splice(j, 1);
@@ -56,6 +60,7 @@ const without = function(source, toRemove) {
       }
     }
   }
+  //return new array
   return newArray;
 }
 
