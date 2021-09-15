@@ -1,5 +1,3 @@
-// FUNCTION IMPLEMENTATION
-
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`😀😀😀Assertion Passed: ${actual} === ${expected}`);
@@ -37,9 +35,33 @@ const assertArraysEqual = function(array1, array2) {
   }
 }
 
-//console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
-//console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
-//console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
+const middle = function(arr) {
+  //initialize return array
+  returnArray = [];
+  //find length of array
+  let lenArr = arr.length;
+  //case where array length is 1 or 2
+  if (lenArr === 1 || lenArr === 2) {
+    return returnArray;
+  }
+  //even case
+  if (lenArr % 2 === 0) {
+    let idx1 = lenArr/2 - 1;
+    let idx2 = lenArr/2;
+    returnArray.push(arr[idx1]);
+    returnArray.push(arr[idx2]);
+  }
+  //odd case
+  else {
+    let idx = Math.floor(lenArr/2);
+    returnArray.push(arr[idx]);
+  }
+  return returnArray;
+}
 
-//console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])) // => false
-//console.log(assertArraysEqual([1, 2, 3], [1, 2, 3])) // => true
+console.log(middle([1, 2, 3])) // => [2]
+console.log(middle([1, 2, 3, 4, 5])) // => [3]
+console.log(middle([1])) // => []
+console.log(middle([1, 2])) // => []
+console.log(middle([1, 2, 3, 4])) // => [2, 3]
+console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
