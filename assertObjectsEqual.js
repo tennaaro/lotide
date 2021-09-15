@@ -31,14 +31,25 @@ const eqObjects = function(object1, object2) {
   return Boolean(rval);
 };
 
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(actual, expected) {
+  // Implement me!
+  const inspect = require('util').inspect; // <= add this line
+  if(eqObjects(actual, expected)) {
+    console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+  }
+  else {
+    console.log(`❌❌❌Assertion Failed: ${actual} !== ${expected}`);
+  }
+};
+
 let ab = { a: "1", b: "2" };
 let ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
+console.log(assertObjectsEqual(ab, ba));
 
 const cd = { c: "1", d: "2", e: "3" };
 const dc = { d: "2", e: "1", c: "3" };
-console.log(eqObjects(cd, dc)); // => true
-
+console.log(assertObjectsEqual(cd, dc));
 
 let abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
+console.log(assertObjectsEqual(abc, ab));
