@@ -16,7 +16,7 @@ const assertArraysEqual = function(array1, array2) {
 //console.log(eqArrays([1, 2, 3], [1, 2, 3])) // => true
 //console.log(eqArrays([1, 2, 3], [3, 2, 1])) // => false
 //console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])) // => false
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3])) // => true
+//console.log(assertArraysEqual([1, 2, 3], [3, 2, 1])) // => false
+//console.log(assertArraysEqual([1, 2, 3], [1, 2, 3])) // => true
 
 module.exports = assertArraysEqual;
